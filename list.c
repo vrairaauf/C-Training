@@ -170,3 +170,15 @@ Bool compareLists(List list1, List list2){
 
 }
 /*----------------------------*/
+int size(List listName){
+	if(isEmptyList(listName))
+		return 0;
+	List vhead=listName;
+	int size=0;
+	while(listName!=NULL){
+		size++;
+		vHead=vHead->next;
+	}
+	return size;
+}
+/*--------------------------*/
