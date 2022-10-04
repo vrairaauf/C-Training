@@ -22,4 +22,5 @@ List pushHeadList(List listName, int data);
 List popLast(List listName);
 List popHead(List listName);
 List clearList(List listName);
+List insertIntoPosition(List listName, int position, int data);
 #endif

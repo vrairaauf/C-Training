@@ -124,3 +124,28 @@ List clearList(List listName){
 	return newList();
 }
 /*----------------------------*/
+List insertIntoPosition(List listName, int position, int data){
+	if(isEmptyList(listName))
+	{
+		printf("empty list impossible !!\n");
+		return newList();
+	}
+	if(listSize(listName)<position){
+		printf("%d out of bound\n", position);
+		return listName;
+	}
+	position--;
+	int index=0;
+	ListE *element=malloc(sizeof(*element));
+	List vHead=listName;
+	element->data=data;
+	element->next=NULL;
+	while(index!=position-1){
+		vHead=vHead->next;
+		index++;
+	}
+	element->next=vHead->next;
+	vHead->next=element;
+	return listName;
+}
+/*----------------------------*/
