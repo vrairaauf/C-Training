@@ -23,4 +23,5 @@ List popLast(List listName);
 List popHead(List listName);
 List clearList(List listName);
 List insertIntoPosition(List listName, int position, int data);
+Bool compareLists(List list1, List list2);
 #endif

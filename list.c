@@ -149,3 +149,24 @@ List insertIntoPosition(List listName, int position, int data){
 	return listName;
 }
 /*----------------------------*/
+Bool compareLists(List list1, List list2){
+	if(isEmptyList(list1) && isEmptyList(list2))
+		return true;
+	else if(isEmptyList(list1) && !isEmptyList(list2) || !isEmptyList(list1) && isEmptyList(list2))
+		return false;
+	if(listSize(list1)!=listSize(list2))
+		return false;
+	List vHead1=list1;
+	List vHead2=list2;
+	while(vHead1!=NULL && vHead2!=NULL){
+		if(vHead1->data==vHead2->data){
+			vHead1=vHead1->next;
+			vHead2=vHead2->next;
+		}else{
+			return false;
+		}
+	}
+	return true;
+
+}
+/*----------------------------*/
