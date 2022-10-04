@@ -16,8 +16,12 @@ int main(int argc, char const *argv[])
 	list2=pushHeadList(list2, 53);
 	list2=pushHeadList(list2, 54);
 	list2=insertIntoPosition(list2, 2, 57);
-	printf("size of list1 : %d \n", listSize(list1));
-	//printList(list1);
+
+	printf("size of list1 : %d \n", listSize(list2));
+	printList(list2);
+	printf("\n--------------------\n");
+	list2=reverse(list2);
+	printList(list2);
 	//list1=popLast(list1);
 	//list1=popHead(list1);
 	//printList(list1);

@@ -173,7 +173,7 @@ Bool compareLists(List list1, List list2){
 int size(List listName){
 	if(isEmptyList(listName))
 		return 0;
-	List vhead=listName;
+	List vHead=listName;
 	int size=0;
 	while(listName!=NULL){
 		size++;
@@ -182,3 +182,17 @@ int size(List listName){
 	return size;
 }
 /*--------------------------*/
+
+List reverse(List listName){
+	if(isEmptyList(listName))
+		return newList();
+	List reverseList=newList();
+	List vHead=listName;
+	while(vHead!=NULL){
+		reverseList=pushHeadList(reverseList, vHead->data);
+		vHead=vHead->next;
+	}
+	clearList(listName);
+	return reverseList;
+}
+/*-----------------------------*/
