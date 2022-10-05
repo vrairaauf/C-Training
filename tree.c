@@ -71,3 +71,29 @@ int countTree(Tree *treeName){
 		return 0;
 	return (countTree(treeName->LeftTree)+ countTree(treeName->RightTree)+1);
 }
+/*----------------------------*/
+Tree *insert(int data, Tree *treeName){
+	if(treeName==NULL){
+		return newTree(data);
+	}else if(treeName->data >= data){
+		Tree *vLeft=treeName;
+		if(vLeft->LeftTree != NULL){
+			return insert(data, vLeft->LeftTree);
+		}else{
+			Tree *node=newTree(data);
+			node->ParentTree=treeName;
+			treeName->LeftTree = node;
+		}
+	}else if(treeName->data < data){
+		Tree *vRight=treeName;
+		if(vRight->RightTree == NULL){
+			return insert(data, vRight->RightTree);
+		}else{
+			Tree *node=newTree(data);
+			node->ParentTree=treeName;
+			treeName->RightTree = node;
+		}
+	}
+	return treeName;
+}
+/*---------------------*/

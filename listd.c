@@ -135,3 +135,80 @@ ListD popTail(ListD listName){
 	return listName;
 }
 /*------------------------------*/
+ListD insert(ListD listName, int data, int position){
+	if(isEmptyList(listName))
+	{
+		printf("empty list\n");
+		return newList();
+	}
+	if(listName->size>=position){
+		/*----------*/
+		/* initialize a new node */
+		ListNode *node;
+		node=malloc(sizeof(*node));
+		if(node==NULL){
+			fprintf(stderr, "allocation error\n");
+			exit(EXIT_FAILURE);
+		}
+		node->data=data;
+		node->next=NULL;
+		node->previous=NULL;
+		/*----------*/
+		int center=listName->size/2 +1;
+		if(position<=center){
+			ListNode *start=listName->head;
+			int index=1;
+			while(index<position-1){
+				start=start->next;
+				index++;
+			}
+			node->next=start->next;
+			node->previous=start;
+			start->next->previous=node;
+			start->next=node;
+			return listName;
+		}else{
+			ListNode *end=listName->tail;
+			int index=1;
+			while(index<=listName->size-position+1){
+				end=end->previous;
+				index++;
+			}
+			node->next=end;
+			node->previous=end->previous;
+			end->previous->next=node;
+			end->previous=node;
+			return listName;
+		}
+
+	}else{
+		printf("position out of bound\n");
+		exit(EXIT_FAILURE);
+	}
+}
+/*----------------------------*/
+Bool compare(ListD list1, ListD list2){
+	if(isEmptyList(list1) && isEmptyList(list2))
+		return true;
+	if(!isEmptyList(list1) && isEmptyList(list2) || isEmptyList(list1) && !isEmptyList(list2))
+		return false;
+	if(listDSize(list1)!=listDSize(list2))
+		return false;
+	ListNode *startFirstList=list1->head;
+	ListNode *endFirstList=list1->tail;
+
+	ListNode *startSecondList=list2->head;
+	ListNode *endSecondList=list2->tail;
+
+	while(startFirstList!=endFirstList){
+		if(startFirstList->data==startSecondList->data && endFirstList->data==endSecondList->data){
+			startFirstList=startFirstList->next;
+			startSecondList=startSecondList->next;
+			endFirstList=endFirstList->previous;
+			endSecondList=endSecondList->previous;
+		}else 
+			return false;
+	}
+	return true;
+}
+/*------------------------*/

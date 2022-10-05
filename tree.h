@@ -15,4 +15,5 @@ Tree *joinTree(Tree *left, Tree *right, int data);
 void printTreePrefix(Tree *treeName);
 void printTreePostfix(Tree *treeName);
 int countTree(Tree *treeName);
+Tree *insert(int data, Tree *treeName);
 #endif

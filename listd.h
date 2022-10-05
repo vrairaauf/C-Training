@@ -19,7 +19,7 @@ typedef struct ListD{
 
 
 /*-------------------------*/
-
+ 
 ListD newList(void);
 Bool isEmptyList(ListD listName);
 int listDSize(ListD listName);
@@ -28,4 +28,6 @@ ListD pushTailNode(ListD listName, int data);
 void printList(ListD listName);
 ListD popHead(ListD listName);
 ListD popTail(ListD listName);
+ListD insert(ListD listName, int data, int position);
+Bool compare(ListD list1, ListD list2);
 #endif
