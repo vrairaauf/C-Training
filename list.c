@@ -196,3 +196,25 @@ List reverse(List listName){
 	return reverseList;
 }
 /*-----------------------------*/
+List sort(List listName){
+	if(isEmptyList(listName))
+	{
+		printf("empty list\n");
+		exit(EXIT_FAILURE);
+	}
+	List current=listName;
+	List index;
+	while(current!=NULL){
+		index=current->next;
+		while(index!=NULL){
+			if(index->data<current->data){
+				int tmp=index->data;
+				index->data=current->data;
+				current->data=tmp;
+			}
+			index=index->next;
+		}
+		current=current->next;
+	}
+	return listName;
+}

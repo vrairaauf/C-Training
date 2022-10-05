@@ -26,6 +26,6 @@ List insertIntoPosition(List listName, int position, int data);
 Bool compareLists(List list1, List list2);
 int size(List listName);
 List reverse(List listName);
-
+List sort(List listName);
 
 #endif
