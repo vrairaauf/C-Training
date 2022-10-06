@@ -30,4 +30,5 @@ List sort(List listName);
 Bool exist(List listName, int data);
 Bool isSortedDescList(List listName);
 Bool isSortedAscList(List listName);
+char sortedDirection(List listName);
 #endif

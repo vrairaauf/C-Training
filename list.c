@@ -254,3 +254,18 @@ Bool isSortedAscList(List listName){
 		return true;
 	return isSortedAscList(listName->next);
 }
+/*---------------------*/
+char sortedDirection(List listName){
+	if(!isEmptyList(listName)){
+		if(!isEmptyList(listName->next)){
+			if(listName->data<listName->next->data)
+				return 'A';
+			else
+				return 'D';
+		}
+		return 'A';
+	}
+	printf("empty lis !!\n");
+	return 'U';
+}
+/*---------------------*/
