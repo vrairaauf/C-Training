@@ -4,7 +4,7 @@
 int main(int argc, char const *argv[])
 {
 	List list1=newList();
-	list1=pushHeadList(list1, 56);
+	list1=pushHeadList(list1, 55);
 	list1=pushHeadList(list1, 57);
 	//list1=pushHeadList(list1, 58);
 	
@@ -13,14 +13,14 @@ int main(int argc, char const *argv[])
 	//list1=sort(list1);
 	printf("\n---------------\n");
 	
-	/*
+
 	List list2=newList();
 	list2=pushHeadList(list2, 56);
-	list2=pushHeadList(list2, 52);
-	list2=pushHeadList(list2, 53);
-	list2=pushHeadList(list2, 54);
-	list2=insertIntoPosition(list2, 2, 57);
-	*/
+	list2=pushHeadList(list2, 56);
+	list2=pushHeadList(list2, 56);
+	list2=pushHeadList(list2, 56);
+	list2=pushHeadList(list2, 56);
+	
 	//printf("size of list1 : %d \n", listSize(list2));
 	//printList(list2);
 	//printf("\n--------------------\n");
@@ -40,5 +40,8 @@ int main(int argc, char const *argv[])
 		printf("ASC direction\n");
 	else
 		printf("DESC direction\n");
+	printf("\n------------------\n");
+	list1=merge(list1, list2);
+	printList(list1);
 	return 0;
 }

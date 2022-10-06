@@ -31,4 +31,5 @@ Bool exist(List listName, int data);
 Bool isSortedDescList(List listName);
 Bool isSortedAscList(List listName);
 char sortedDirection(List listName);
+List merge(List list1, List list2);
 #endif

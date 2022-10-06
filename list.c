@@ -269,3 +269,19 @@ char sortedDirection(List listName){
 	return 'U';
 }
 /*---------------------*/
+List merge(List list1, List list2){
+	if(isEmptyList(list1) && isEmptyList(list2))
+		return newList();
+	if(isEmptyList(list1) && !isEmptyList(list2))
+		return list2;
+	if(!isEmptyList(list1) && isEmptyList(list2))
+		return list1;
+	
+	List vHead=list1;
+	while(vHead->next!=NULL)
+		vHead=vHead->next;
+	
+	vHead->next=list2;
+	return list1;
+}
+/*----------------------*/
