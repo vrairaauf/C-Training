@@ -27,5 +27,7 @@ Bool compareLists(List list1, List list2);
 int size(List listName);
 List reverse(List listName);
 List sort(List listName);
-
+Bool exist(List listName, int data);
+Bool isSortedDescList(List listName);
+Bool isSortedAscList(List listName);
 #endif

@@ -5,20 +5,14 @@ int main(int argc, char const *argv[])
 {
 	List list1=newList();
 	list1=pushHeadList(list1, 56);
-	list1=pushHeadList(list1, 52);
-	list1=pushHeadList(list1, 53);
-	list1=pushHeadList(list1, 544);
-	list1=pushHeadList(list1, 154);
-	list1=pushHeadList(list1, 4);
-	list1=pushHeadList(list1, 19);
-	list1=pushHeadList(list1, 85);
-	list1=pushHeadList(list1, 2);
-	list1=pushHeadList(list1, 96);
+	list1=pushHeadList(list1, 57);
+	list1=pushHeadList(list1, 58);
+	
 	//list1=insertIntoPosition(list1, 2, 57);
 	printList(list1);
-	list1=sort(list1);
+	//list1=sort(list1);
 	printf("\n---------------\n");
-	printList(list1);
+	
 	/*
 	List list2=newList();
 	list2=pushHeadList(list2, 56);
@@ -38,6 +32,9 @@ int main(int argc, char const *argv[])
 	/*if(compareLists(list1, list2))
 		printf("equals\n");
 		*/
-
+	if(exist(list1, 85))
+		printf("exist\n");
+	if(isSortedDescList(list1))
+		printf("sorted\n");
 	return 0;
 }

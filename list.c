@@ -218,3 +218,39 @@ List sort(List listName){
 	}
 	return listName;
 }
+/*----------------*/
+Bool exist(List listName, int data){
+	if(isEmptyList(listName))
+		return false;
+	else if (listName->data==data)
+	{
+		return true;
+	}
+	return exist(listName->next, data);
+}
+/*-----------------*/
+Bool isSortedDescList(List listName){
+	if(isEmptyList(listName))
+		return false;
+	if(listName->next!=NULL){
+		if(listName->data>listName->next->data )
+			return true;
+		else
+			return false;
+	}else
+		return true;
+	return isSortedDescList(listName->next);
+}
+/*-----------------------------*/
+Bool isSortedAscList(List listName){
+	if(isEmptyList(listName))
+		return false;
+	if(listName->next!=NULL){
+		if(listName->data<listName->next->data )
+			return true;
+		else
+			return false;
+	}else
+		return true;
+	return isSortedAscList(listName->next);
+}
